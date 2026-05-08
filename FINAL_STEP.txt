@@ -1,0 +1,51 @@
+========================================
+ECE391 环境配置 - 最后一步
+========================================
+
+你现在只需要完成最后一步：安装QEMU和开发工具
+
+方法1：在PowerShell中直接运行（推荐）
+----------------------------------------
+
+复制粘贴这条命令到PowerShell：
+
+wsl -d Ubuntu-22.04 bash -c "sudo apt update && sudo apt install -y qemu-system-x86 nasm gdb gcc-multilib g++-multilib"
+
+然后输入你的Ubuntu密码，等待5-10分钟。
+
+
+方法2：在WSL终端中运行
+----------------------------------------
+
+1. 打开PowerShell，运行：
+   wsl -d Ubuntu-22.04
+
+2. 在WSL终端中运行：
+   sudo apt update && sudo apt install -y qemu-system-x86 nasm gdb gcc-multilib g++-multilib
+
+3. 输入密码，等待安装完成
+
+
+安装完成后的验证
+----------------------------------------
+
+运行这条命令验证：
+wsl -d Ubuntu-22.04 bash -c "qemu-system-i386 --version"
+
+如果看到版本号，说明安装成功！
+
+
+运行你的操作系统
+----------------------------------------
+
+wsl -d Ubuntu-22.04 bash -c "cd /mnt/c/Users/13613/Desktop/ECE391_UIUC22fa/uiuc-ece391-mp3/student-distrib && qemu-system-i386 -hda mp3.img -m 512 -vga std"
+
+应该会弹出QEMU窗口，显示你的操作系统！
+
+
+需要帮助？
+----------------------------------------
+
+如果遇到任何错误，把错误信息告诉我，我会帮你解决！
+
+========================================
